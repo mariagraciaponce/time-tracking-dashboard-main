@@ -1,0 +1,27 @@
+:root {
+    --Purple-600: hsl(246, 80%, 60%);
+    --cl-work: hsl(15, 100%, 70%);
+    --cl-play: hsl(195, 74%, 62%);
+    --cl-study: hsl(348, 100%, 68%);
+    --cl-exercise: hsl(145, 58%, 55%);
+    --cl-social: hsl(264, 64%, 52%);
+    --cl-self-care: hsl(43, 84%, 65%);
+
+    --navy-950: hsl(226, 43%, 10%);
+    --navy-900: hsl(235, 46%, 20%);
+    --purple-500: hsl(235, 45%, 61%);
+    --navy-200: hsl(236, 100%, 87%);
+
+    --ff: "Rubik", sans-serif;
+
+    --tp-span: clamp(2rem, 2.727vw + 1.318rem, 3.5rem);
+    --tp-h1:  clamp(1.5rem, 1.818vw + 1.045rem, 2.5rem);
+    --tp-3: 1.125rem;
+    --tp-4: .93rem;
+    --line-height-span: clamp(2.4rem, 0.727vw + 2.218rem, 2.8rem);
+    --line-height-2: .8;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+}
