@@ -9,12 +9,13 @@
 
     --navy-950: hsl(226, 43%, 10%);
     --navy-900: hsl(235, 46%, 20%);
+    --navy-800: hsl(235, 41%, 34%);
     --purple-500: hsl(235, 45%, 61%);
     --navy-200: hsl(236, 100%, 87%);
 
     --ff: "Rubik", sans-serif;
 
-    --tp-span: clamp(2rem, 2.727vw + 1.318rem, 3.5rem);
+    --tp-span: clamp(2rem, 8vw + 0rem, 3.5rem);
     --tp-h1:  clamp(1.5rem, 1.818vw + 1.045rem, 2.5rem);
     --tp-3: 1.125rem;
     --tp-4: .93rem;
@@ -24,4 +25,225 @@
     --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
+}
+
+/*reset*/
+*, *:is(::after, ::before) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    min-height: 100vh;
+    line-height: var(--line-height-2);
+    font-family: var(--ff);
+    background-color: var(--navy-950);
+    color: white;
+    display: grid;
+    place-items: center;
+}
+picture, img {
+    display: block;
+    max-width: 100%;
+}
+
+/*utilities*/
+h1 {
+    font-size: var(--tp-h1);
+    font-weight: var(--fw-light);
+}
+span {
+    font-size: var(--tp-span);
+    font-weight: var(--fw-light);
+    line-height: var(--line-height-span);
+}
+h2 {
+    font-size: var(--tp-3);
+    font-weight: var(--fw-medium);
+}
+p {
+    font-size: var(--tp-4);
+    font-weight: var(--fw-regular);
+}
+button {
+    font-size: var(--tp-3);
+    font-weight: var(--fw-regular);
+} 
+
+/*-------mobile design---------*/
+
+/*---menu---*/
+.activity-tracker {
+    display: grid;
+    gap: clamp(1.5rem, 2.857vw + -0.286rem, 2rem);
+}
+.activity-tracker__menu {
+    display: grid;
+}
+.activity-tracker__owner {
+    display: flex;
+    gap: clamp(1.5rem, 5.714vw + -2.071rem, 2.5rem);
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem; 
+    background-color: var(--Purple-600);
+    border-radius: 1rem;
+    z-index: 10;
+}
+.activity-tracker__owner p {
+    color: var(--navy-200);
+    margin-block-end: .5rem;
+}
+.activity-tracker__owner-img {
+    border-radius: 50%;
+    border: 3px solid white;
+    width: 4rem;
+    height: auto;
+}
+.activity-tracker__options {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0 1.5rem 0;
+    background-color: var(--navy-900);
+    border-radius: 0 0rem 1rem 1rem;
+    transform: translateY(-.5rem);
+    z-index: 5;
+}
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--navy-200);
+}
+button:is(:hover, :active) {
+    color: white;
+    cursor: pointer;
+}
+
+/*---activities---*/
+.activity-tracker__activity {
+    display: grid;
+    grid-template-rows: 2.8rem 1fr;
+}
+.activity__bg {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem 1rem 0rem 0rem ;
+}
+.activity__bg > img {
+    transform: translate(15rem, -.5rem);
+}
+.work .activity__bg {
+    background-color: var(--cl-work);
+}
+.play .activity__bg {
+    background-color: var(--cl-play);
+}
+.study .activity__bg {
+    background-color: var(--cl-study);
+}
+.exercise .activity__bg {
+    background-color: var(--cl-exercise);
+}
+.social .activity__bg {
+    background-color: var(--cl-social);
+}
+.self-care .activity__bg {
+    background-color: var(--cl-self-care);
+}
+
+.activity__info {
+    background-color: var(--navy-900);
+    padding: 1.5rem;
+    display: grid;
+    gap: .5rem;
+    border-radius: 1rem;
+    transform: translateY(-.6rem);
+}
+.activity__info:is(:hover,:active) {
+    background-color: var(--navy-800);
+    cursor: pointer;
+}
+
+.activity__name {
+    position: relative;
+}
+.activity__name::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: .1rem;
+    width: 5px;
+    height: 5px;
+    background: var(--navy-200);  
+    border-radius: 50%;  
+    box-shadow: 10px 0 0 var(--navy-200), 20px 0 0 var(--navy-200);
+}
+.activity__name:hover::after {
+    background: white;
+    cursor: pointer;
+}
+.activity__data {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between ;
+}
+.activity__data p:not(:has(span)) {
+    color: var(--navy-200);
+}
+
+@media (min-width: 40rem) {
+    .activity-tracker {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 38.25rem;
+    }
+    .activity-tracker__menu {
+        grid-area: 1/1/2/4;
+    }
+    .activity-tracker__options {
+        justify-content: space-evenly
+    }
+    .activity__bg > img {
+        transform: translate(6rem, -0.5rem);
+    }
+    .activity-tracker__activity {
+        display: grid;
+        grid-template-rows: 3rem 1fr;
+    }
+
+}
+@media (min-width: 62rem) {
+    .activity-tracker {
+        max-width: 69.7rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+    .activity-tracker__menu {
+        grid-template-rows: repeat(3,1fr);
+        grid-area: 1/1/3/2;
+    }
+    .activity-tracker__owner {
+        grid-row: 1/3;
+    }
+    .activity-tracker__owner-img {
+        width: 4.875rem;
+    }
+    .activity-tracker__options {
+        flex-direction: column;
+        align-items: start; 
+        padding: 2rem;
+       }
+    .activity__info {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    .activity__bg > img {
+        transform: translate(9.5rem, -0.5rem);
+    }
+    .activity__data {
+        gap: .5rem;
+    }
+    
 }
