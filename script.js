@@ -21,7 +21,7 @@ function renderCards(data, period = "weekly") {
               <h2>${item.title}</h2>
             </div>
             <div class="activity__data">
-              <p><span>${item.timeframes[period].current}</span>hrs</p>
+              <p><span>${item.timeframes[period].current}hrs</span></p>
               <p>Last ${
                 period === "daily"
                   ? "Day"
@@ -38,7 +38,7 @@ function renderCards(data, period = "weekly") {
         // Si la tarjeta ya existe, solo actualizar los datos
         const activityData = card.querySelector(".activity__data");
         activityData.innerHTML = `
-          <p><span>${item.timeframes[period].current}</span>hrs</p>
+          <p><span>${item.timeframes[period].current}hrs</span></p>
           <p>Last ${
             period === "daily"
               ? "Day"

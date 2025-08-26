@@ -52,10 +52,12 @@ h1 {
     font-size: var(--tp-h1);
     font-weight: var(--fw-light);
 }
+
 span {
     font-size: var(--tp-span);
     font-weight: var(--fw-light);
     line-height: var(--line-height-span);
+    color: white;
 }
 h2 {
     font-size: var(--tp-3);
@@ -189,7 +191,7 @@ button:is(:hover, :active) {
     align-items: center;
     justify-content: space-between ;
 }
-.activity__data p:not(:has(span)) {
+.activity__data:not(p :has(span)){
     color: var(--navy-200);
 }
 
